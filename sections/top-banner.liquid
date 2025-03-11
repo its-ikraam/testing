@@ -1,0 +1,119 @@
+<div class="gift-guide-section">
+  <div class="top-bar">
+    <span>{{ section.settings.top_bar_text }}</span>
+    <button class="toggle-button">{{ section.settings.button_text }}</button>
+  </div>
+  <div class="toggle-content">
+    <div class="gift-content">
+      <h2>{{ section.settings.section_heading }}</h2>
+      <p>{{ section.settings.section_description }}</p>
+      <a href="{{ section.settings.shop_now_link }}" class="shop-now">{{ section.settings.shop_now_text }}</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Gift Guide Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "top_bar_text",
+      "label": "Top Bar Text",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "CHOOSE GIFT"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Heading",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Description",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    },
+    {
+      "type": "text",
+      "id": "shop_now_text",
+      "label": "Shop Now Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "shop_now_link",
+      "label": "Shop Now Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Top banner"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .gift-guide-section {
+    position: relative;
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+  }
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e0e0e0;
+    padding: 10px 20px;
+  }
+  .toggle-button {
+    background: yellow;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  .toggle-content {
+    display: none;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+  }
+  .toggle-content.active {
+    display: block;
+  }
+  .gift-content {
+    padding: 40px 20px;
+  }
+  .shop-now {
+    background: black;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  @media (max-width: 768px) {
+    .top-bar {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.querySelector(".toggle-button");
+    const toggleContent = document.querySelector(".toggle-content");
+
+    toggleButton.addEventListener("click", function() {
+      toggleContent.classList.toggle("active");
+    });
+  });
+</script>
