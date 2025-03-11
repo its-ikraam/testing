@@ -78,7 +78,7 @@
         "padding_bottom": 36
       }
     },
-    "top_banner_Vwdjba": {
+    "top_banner_8AcwRR": {
       "type": "top-banner",
       "settings": {
         "top_bar_text": "Find the ideal gift for your loved ones.",
@@ -91,8 +91,8 @@
     }
   },
   "order": [
+    "top_banner_8AcwRR",
     "image_banner",
-    "featured_collection",
-    "top_banner_Vwdjba"
+    "featured_collection"
   ]
 }
